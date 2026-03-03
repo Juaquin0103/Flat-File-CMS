@@ -32,7 +32,7 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
    cd [GeneracionSW]
 2. **Crear un entorno virtual:**
     python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
+    source venv/bin/activate  
 3. **Instalar dependencias:**
     pip install -r requirements.txt
 4. **Correr la aplicacion:**
