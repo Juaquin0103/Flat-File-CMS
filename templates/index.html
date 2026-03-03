@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Flat CMS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Flat-File CMS | Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Mis Artículos</h1>
-    <ul>
-        {% for f in files %}
-        <li><a href="/{{ f }}">{{ f }}</a></li>
-        {% endfor %}
-    </ul>
+    <header>
+        <h1>📚 Panel de Contenidos</h1>
+        <p>Generación de Software - 2026</p>
+    </header>
+
+    <main>
+        <h3>Documentos Disponibles:</h3>
+        <ul>
+            {% for f in files %}
+            <li>
+                <a href="/{{ f }}">📄 {{ f | replace('-', ' ') | capitalize }}</a>
+            </li>
+            {% endfor %}
+            {% if not files %}
+            <p>No hay archivos en la carpeta /content aún.</p>
+            {% endif %}
+        </ul>
+    </main>
+
+    <footer>
+        <p>© Juaquin - Proyecto Flat CMS</p>
+    </footer>
 </body>
 </html>

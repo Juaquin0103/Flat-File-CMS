@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | capitalize }} | Mi Flat CMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <a href="/">⬅ Volver al inicio</a>
-    <hr>
-    <div>
+    <header>
+        <h1>{{ title | replace('-', ' ') | capitalize }}</h1>
+        <nav>
+            <a href="/">🏠 Volver al Índice</a>
+        </nav>
+    </header>
+    
+    <article class="card">
         {{ content | safe }}
-    </div>
+    </article>
+
+    <footer>
+        <hr>
+        <p style="text-align: center; color: #888; font-size: 0.9em;">
+            Generado automáticamente por el motor Python/Flask
+        </p>
+    </footer>
 </body>
 </html>
