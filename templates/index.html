@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Flat CMS</title>
+</head>
+<body>
+    <h1>Mis Artículos</h1>
+    <ul>
+        {% for f in files %}
+        <li><a href="/{{ f }}">{{ f }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
