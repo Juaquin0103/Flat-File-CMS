@@ -4,7 +4,6 @@ import markdown
 
 app = Flask(__name__)
 
-# Configuración de rutas
 CONTENT_DIR = "content"
 
 def get_html_from_md(file_name):
@@ -14,12 +13,10 @@ def get_html_from_md(file_name):
     
     with open(path, "r", encoding="utf-8") as f:
         text = f.read()
-        # Aquí ocurre la "magia": convertimos Markdown a HTML puro
         return markdown.markdown(text)
 
 @app.route('/')
 def index():
-    # Escaneamos la carpeta para generar un índice automático
     files = [f.replace('.md', '') for f in os.listdir(CONTENT_DIR) if f.endswith('.md')]
     return render_template('index.html', files=files)
 

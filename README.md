@@ -18,6 +18,9 @@ La arquitectura sigue una separación clara entre la lógica de negocio y el alm
 - `/templates`: Plantillas HTML dinámicas.
 - `app.py`: Núcleo del CMS y manejo de rutas.
 - `requirements.txt`: Dependencias necesarias para la ejecución.
+## 🧪 Pruebas
+Para ejecutar las pruebas unitarias:
+`python -m unittest tests/test_cms.py`
 
 ## 🚀 Instalación y Ejecución
 
